@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: pointage
+  datasource:
+    url: jdbc:oracle:thin:@//192.168.98.210:1521/agrtest
+    username: arribatec
+    password: ThyXB2$d7
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.Oracle12cDialect
+server:
+  port: 8081
