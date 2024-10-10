@@ -7,6 +7,11 @@ spring:
     password: ThyXB2$d7
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+    open-in-view: false
     hibernate:
       ddl-auto: none
       properties:

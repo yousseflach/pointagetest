@@ -19,7 +19,7 @@ public class AglMatchController {
     @PostMapping("/import")
     public ResponseEntity<String> importData(@RequestParam("filePath") String filePath) {
         try {
-            aglMatchService.importExcelData(filePath);
+            aglMatchService.debugExcelData(filePath);
             return ResponseEntity.ok("Données importées avec succès.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de l'import : " + e.getMessage());

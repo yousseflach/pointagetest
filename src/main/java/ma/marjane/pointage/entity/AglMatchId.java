@@ -1,34 +1,36 @@
 package ma.marjane.pointage.entity;
 
+import lombok.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AglMatchId implements Serializable {
+    private String client;
     private Long voucherNo;
-    private Long sequenceRef;
+    private Long sequenceNo;
+    private String type;
 
-    // Default constructor
-    public AglMatchId() {}
+    // Getters, setters, equals, and hashCode
 
-    public AglMatchId(Long voucherNo, Long sequenceRef) {
-        this.voucherNo = voucherNo;
-        this.sequenceRef = sequenceRef;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AglMatchId that = (AglMatchId) o;
+        return Objects.equals(client, that.client) &&
+                Objects.equals(voucherNo, that.voucherNo) &&
+                Objects.equals(sequenceNo, that.sequenceNo) &&
+                Objects.equals(type, that.type);
     }
 
-    // Getters and setters
-
-    // hashCode and equals
     @Override
     public int hashCode() {
-        return Objects.hash(voucherNo, sequenceRef);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        AglMatchId that = (AglMatchId) obj;
-        return Objects.equals(voucherNo, that.voucherNo) &&
-                Objects.equals(sequenceRef, that.sequenceRef);
+        return Objects.hash(client, voucherNo, sequenceNo, type);
     }
 }
